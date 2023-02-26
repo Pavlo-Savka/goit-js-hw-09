@@ -11,7 +11,7 @@ const setAttribute = document.querySelector('button[data-start]')
         buttonStart.setAttribute('disabled', 'disabled');
         buttonStop.removeAttribute('disabled');
         body.style.backgroundColor = getRandomHexColor();
-        intervalID = setInterval(() => {
+        const intervalID = setInterval(() => {
             body.style.backgroundColor = getRandomHexColor();
         }, 1000),
         console.log(intervalID);
