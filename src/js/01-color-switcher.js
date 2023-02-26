@@ -4,18 +4,19 @@ function getRandomHexColor() {
 const body = document.querySelector('body');
 const buttonStart = document.querySelector('button[data-start]');
 const buttonStop = document.querySelector('button[data-stop]');
+let intervalID;
 buttonStop.setAttribute('disabled', 'disabled');
 
-const setAttribute = document.querySelector('button[data-start]')
+const start = document.querySelector('button[data-start]')
     .addEventListener('click', () => {
         buttonStart.setAttribute('disabled', 'disabled');
         buttonStop.removeAttribute('disabled');
         body.style.backgroundColor = getRandomHexColor();
-        const intervalID = setInterval(() => {
+        intervalID = setInterval(() => {
             body.style.backgroundColor = getRandomHexColor();
-        }, 1000),
-        console.log(intervalID);
+        }, 1000);
     });
+
   const stop = document.querySelector('button[data-stop]')
       .addEventListener('click', () => {
           buttonStart.removeAttribute('disabled');
