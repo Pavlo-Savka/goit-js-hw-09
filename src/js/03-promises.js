@@ -20,7 +20,7 @@ function handleSubmit(event) {
  const delay = parseInt(form.delay.value);
  const step = (form.step.value);
  const amount = form.amount.value;
-  for (i = 0; i < amount; i += 1) {
+  for (let i = 0; i < amount; i += 1) {
    createPromise(i + 1, step * i + delay)
     .then(value => {
       Notiflix.Notify.success(value);
